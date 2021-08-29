@@ -13,31 +13,36 @@ repositories {
 }
 
 android {
-    compileSdkVersion 22
-    buildToolsVersion "22.0.1"
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+    ndkVersion "23.0.7599858"
 
     defaultConfig {
         minSdkVersion 4
-        targetSdkVersion 22
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
 
         ndk {
             moduleName 'libjackpal-termexec2'
-            abiFilters 'all'
             ldLibs 'log', 'c'
         }
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_7
-        targetCompatibility JavaVersion.VERSION_1_7
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    externalNativeBuild {
+        cmake {
+            path file('CMakeLists.txt')
         }
     }
 }
@@ -53,7 +58,7 @@ android.libraryVariants.all { variant ->
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    compile 'com.android.support:support-annotations:21.0.0'
+    implementation 'com.android.support:support-annotations:21.0.0'
 }

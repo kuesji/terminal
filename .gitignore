@@ -1,7 +1,12 @@
+.idea
 .gradle
-/local.properties
-/.idea/workspace.xml
-/.idea/libraries
-.DS_Store
-/build
+build
+term/build
+term/.cxx
+term/release
+libtermexec/build
+libtermexec/.cxx
+emulatorview/build
+emulatorview/.cxx
+local.properties
 *.iml

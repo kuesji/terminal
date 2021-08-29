@@ -26,8 +26,7 @@
 #include <unistd.h>
 #include <termios.h>
 #include <signal.h>
-
-typedef unsigned short char16_t;
+#include <string.h>
 
 class String8 {
 public:
@@ -41,7 +40,7 @@ public:
         }
     }
 
-    void set(const char16_t* o, size_t numChars) {
+    void set(const unsigned short* o, size_t numChars) {
         if (mString) {
             free(mString);
         }

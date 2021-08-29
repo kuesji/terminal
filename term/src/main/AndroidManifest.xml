@@ -4,12 +4,15 @@
       android:versionName="1.0.70"
       android:versionCode="71"
       android:installLocation="auto">
+
     <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_SUPERUSER" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <!--
     <permission android:name="jackpal.androidterm.permission.RUN_SCRIPT"
                 android:label="@string/perm_run_script"
                 android:description="@string/permdesc_run_script"
@@ -25,10 +28,12 @@
                 android:description="@string/permdesc_prepend_to_path"
                 android:permissionGroup="android.permission-group.SYSTEM_TOOLS"
                 android:protectionLevel="dangerous" />
-    <application android:icon="@drawable/ic_launcher"
+     -->
+
+    <application android:icon="@drawable/app"
                 android:label="@string/application_terminal"
                 android:hardwareAccelerated="true"
-                android:theme="@style/Theme">
+                android:theme="@android:style/Theme.Material.NoActionBar">
         <activity android:name="Term"
                 android:launchMode="singleTask"
                 android:configChanges="keyboard|keyboardHidden|orientation"
